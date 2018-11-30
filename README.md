@@ -30,6 +30,7 @@ Addiction Patterns
 		-	graphviz
 		-	apyori
 		-	pyfpgrowth
+		-	fim
 		-	prefixspan
 			```diff
 			-	prefixspan not used yet due to library issues
