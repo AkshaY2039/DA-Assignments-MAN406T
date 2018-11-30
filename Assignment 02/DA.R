@@ -1,7 +1,7 @@
 library(ggplot2)
 library(plotly)
 Country=c("China","India","Canada","United States","Russia","Germany","Kenya")
-CPSPD<-data.frame(read.csv("consumption-per-smoker-per-day.csv", header = TRUE, sep = ","))
+CPSPD<-data.frame(read.csv("../Dataset/consumption-per-smoker-per-day.csv", header = TRUE, sep = ","))
 CPSPD<-edit(CPSPD)
 #for a particular country
 Y<-subset(CPSPD,Entity%in%Country)
@@ -13,7 +13,7 @@ ggplotly(ggplot(subset(Y,Entity=="India"),aes(x=Year,y=cigarette,fill=factor(Cod
   geom_bar(stat="identity",position="dodge")+
   scale_fill_discrete("Code")+
   xlab("Year")+ylab("Cigarette")+ggtitle("C/S for india from 1980-2012"))
-NDS<-data.frame(read.csv("number-of-total-daily-smokers.csv", header = TRUE,sep = ","))
+NDS<-data.frame(read.csv("../Dataset/number-of-total-daily-smokers.csv", header = TRUE,sep = ","))
 NDS<-edit(NDS)
 ND <- subset(NDS,Entity%in%Country,select=1:4)
 ND12 <- subset(ND, Year==2012,select=1:4)
@@ -35,7 +35,7 @@ i<-ggplotly(ggplot(ND, aes(x=Entity, y=NDS, fill=Code)) +
                outlier.size=4)+  xlab("Country")+ylab("Number of daily smokers"))
 i
 
-CD<-data.frame(read.csv("smoking-and-secondhand-deaths.csv", header = TRUE, sep = ","))
+CD<-data.frame(read.csv("../Dataset/smoking-and-secondhand-deaths.csv", header = TRUE, sep = ","))
 CD<-subset(CD,Entity%in%Country)
 CD<-edit(CD)
 CDCHN<-subset(CD, Entity=="China")
@@ -48,7 +48,7 @@ ggplotly(ggplot(CDIND, aes(x=Year, y=SD)) +
   geom_point(size=2, shape=18, color='Blue')+
   geom_smooth(method=lm, linetype="dashed",
               color="darkred")+ylab("Smoker death")+ggtitle("Scatter- regression of smoker deaths in India"))
-SDbA<-data.frame(read.csv("share-of-cancer-deaths-attributed-to-tobacco.csv", header=TRUE,sep=","))
+SDbA<-data.frame(read.csv("../Dataset/share-of-cancer-deaths-attributed-to-tobacco.csv", header=TRUE,sep=","))
 SDbA<-edit(SDbA)
 SDbA<-subset(SDbA,Year==2010)
 p=ggplotly(ggplot(SDbA, aes(x=SDbA$AgeStd, fill=Entity)) +
