@@ -16,7 +16,7 @@ Attributes = {
 	"2": {},	# Number of cigarettes per day
 }
 
-# age and smoking hour in night
+# age and Number of cigarettes per day
 entityIndex = [1,2]
 
 # Loading Data
@@ -49,5 +49,6 @@ linkage = "ward" # ward minimizes the variance of the clusters being merged
 AggCluster = AgglomerativeClustering (linkage = linkage, n_clusters = 7).fit (dataAttributes)
 print ("Agglomerative Clustering Finished\n")
 
+# adding 10 as the first key it will take to b 0
 pyplot.scatter (dataAttributes.T[0] + 10, dataAttributes.T[1], c = AggCluster.labels_)
 pyplot.show ()
