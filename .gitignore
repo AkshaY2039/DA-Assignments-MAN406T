@@ -1,2 +1,6 @@
 # vscodefiles
 .vscode
+
+# treedot
+*.dot
+
