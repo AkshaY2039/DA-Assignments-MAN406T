@@ -86,7 +86,7 @@ randomIndex = 200
 record = testDataAttributes[randomIndex]
 print (record)
 record = record.reshape (1, -1)
-classPredSingle = cNBClf.predict (record)
+classPredSingle = dTreeClf.predict (record)
 print ("Predicted Class Label: ")
 print (classPredSingle)
 print ("Actual Class Label : ")
