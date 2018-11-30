@@ -80,3 +80,14 @@ print ("Number of mislabeled points out of total %d points : %d" % (totalPoints,
 print ("Classifier Model Accuracy: ", (1 - (mislabeled / totalPoints)) * 100.0)
 
 print ("convert dTree.dot to dTree.pdf using 'dot -Tpdf dTree.dot -o dTree.pdf'")
+
+# checking with random record
+randomIndex = 200
+record = testDataAttributes[randomIndex]
+print (record)
+record = record.reshape (1, -1)
+classPredSingle = cNBClf.predict (record)
+print ("Predicted Class Label: ")
+print (classPredSingle)
+print ("Actual Class Label : ")
+print (checkDataClass[randomIndex])
