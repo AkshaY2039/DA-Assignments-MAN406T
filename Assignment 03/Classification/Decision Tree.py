@@ -56,10 +56,10 @@ print ("Class Labels: ", list (classNames.keys ()))
 print ("Done Loading Data\n")
 
 # seperating test and training data
-testDataAttributes = numpy.asarray (dataAttributes [3001:6000])
-checkDataClass = numpy.asarray (dataClass[3001:6000])
-dataAttributes = numpy.asarray (dataAttributes[:3000])
-dataClass = numpy.asarray (dataClass[:3000])
+testDataAttributes = numpy.asarray (dataAttributes [4500:])
+checkDataClass = numpy.asarray (dataClass[4500:])
+dataAttributes = numpy.asarray (dataAttributes[:4500])
+dataClass = numpy.asarray (dataClass[:4500])
 
 print ("Classifier training Started")
 dTreeClf = tree.DecisionTreeClassifier()
