@@ -32,7 +32,8 @@ Addiction Patterns
 		-	pyfpgrowth
 		-	prefixspan
 			```diff
-			- prefixspan not used yet due to library issues
+			-	prefixspan not used yet due to library issues
+			+	instead using pyprefixspan
 			```
 	-	Help with execution (Python3 required)
 		>	python3 filename.py
