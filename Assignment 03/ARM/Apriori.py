@@ -4,7 +4,6 @@
 """ Outline :  """
 
 import numpy
-import re
 import csv
 from apyori import apriori
 
