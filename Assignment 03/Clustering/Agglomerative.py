@@ -46,8 +46,8 @@ dataAttributes = numpy.asarray (dataAttributes)
 
 print ("Agglomerative Clustering Started")
 linkage = "ward" # ward minimizes the variance of the clusters being merged
-AggCluster = AgglomerativeClustering (linkage = linkage, n_clusters = 5).fit (dataAttributes)
+AggCluster = AgglomerativeClustering (linkage = linkage, n_clusters = 7).fit (dataAttributes)
 print ("Agglomerative Clustering Finished\n")
 
-pyplot.scatter (dataAttributes.T[0], dataAttributes.T[1], c = AggCluster.labels_)
+pyplot.scatter (dataAttributes.T[0] + 10, dataAttributes.T[1], c = AggCluster.labels_)
 pyplot.show ()
